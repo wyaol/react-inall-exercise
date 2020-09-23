@@ -1,0 +1,48 @@
+.cont {
+  width: 80%;
+  background-color: azure;
+  margin: 0 auto;
+}
+
+.calculator {
+  width: 80%;
+  background-color: beige;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.display {
+  height: 50px;
+  line-height: 50px;
+  width: 80%;
+  background-color: white;
+  margin: 50px auto;
+  text-align: right;
+}
+
+.button {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  width: 25%;
+  margin: 5px 1%;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.orange {
+  background-color: orange;
+  color: white;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.pink {
+  background-color: pink;
+  color: white;
+}

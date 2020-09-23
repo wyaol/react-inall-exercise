@@ -1,0 +1,9 @@
+.nav {
+  height: 100px;
+  background-color: aqua;
+  line-height: 100px;
+}
+
+.nav span {
+  margin-right: 30px;
+}
