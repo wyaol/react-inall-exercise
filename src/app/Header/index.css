@@ -6,4 +6,12 @@
 
 .nav span {
   margin-right: 30px;
+  font-size: large;
+  float: right;
+}
+
+span a {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
 }
