@@ -1,0 +1,60 @@
+.cont {
+  width: 80%;
+  background-color: azure;
+  margin: 0 auto;
+  padding-bottom: 200px;
+}
+
+.clear {
+  clear: both;
+}
+
+.cont h1 {
+  text-align: center;
+}
+
+.timer {
+  margin: 70px 2%;
+}
+
+.time-setter {
+  line-height: 100%;
+}
+
+.time-setter span {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.time-setter input {
+  padding: 10px 5px;
+  width: 50%;
+  float: right;
+}
+
+.left {
+  width: 30%;
+  display: inline-block;
+  height: 280px;
+  
+}
+
+.left button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 25px 0;
+  color: white;
+  background-color: blue;
+}
+
+.timer-display {
+  float: right;
+  width: 53%;
+  height: 120px;
+  background-color: transparent;
+  border:5px solid black;
+}
+
+.go-home {
+  margin-top: 70px;
+}

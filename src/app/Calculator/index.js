@@ -114,7 +114,6 @@ class Calculator extends Component {
     }
 
     if (inputChar === '=' && !isNaN(Number(value[value.length-1])) ) {
-      console.log(value);
       this.setState({
         value: eval(value.replace('x', '*')).toString(),
         isResult: true
