@@ -80,16 +80,50 @@ class Calculator extends Component {
         type: 0
       }
     ],
-    value: ''
+    value: '',
+    isResult: false
   }
 
+  judgeFormula = (Formula, newInput) => {
+    const newFormula = Formula + newInput;
+    return /^(\d+[+-x]?)*$/.test(newFormula) ? newFormula : Formula;
+  }
+
+  formatFormula = (str) => {
+    return str.replace(/([-x\+])/g, ' $1 ')
+  } 
+
   onClick = (e) => {
-    const res = this.state.value.search(/^\d$/i);
-    console.log(res);
-    this.setState({
-      value: this.state.value + e.target.innerText
-    })
-    
+    const inputChar = e.target.innerHTML;
+    const value = this.state.value;
+
+    if (inputChar === 'Clear') {
+      this.setState({
+        value: '',
+        isResult: false
+      })
+      return ;
+    }
+
+    if (this.state.isResult) {
+      this.setState({
+        value: inputChar,
+        isResult: false
+      });
+      return ;
+    }
+
+    if (inputChar === '=' && !isNaN(Number(value[value.length-1])) ) {
+      console.log(value);
+      this.setState({
+        value: eval(value.replace('x', '*')).toString(),
+        isResult: true
+      })
+    } else {
+      this.setState({
+        value: this.judgeFormula(value, inputChar)
+      })
+    }
   }
 
   render() {
@@ -97,7 +131,7 @@ class Calculator extends Component {
       <div className="cont">
         <h1>在线计算器</h1>
         <div className="calculator">
-          <div className="display">{this.state.value}</div>
+          <div className="display">{this.formatFormula(this.state.value)}</div>
           {this.state.buttons.map((button, index) => (
             <div onClick={this.onClick} key={index} className={`button ${button.color}`}>{button.value}</div>
           ))}
